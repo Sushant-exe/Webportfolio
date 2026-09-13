@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="violet">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Sushant | Full-Stack Software Engineer & System Architect</title>
+  <meta name="description" content="Portfolio of Sushant, a Full-Stack Software Engineer specializing in modern reactive web applications, scalable distributed backends, and immersive digital experiences." />
+  <meta name="keywords" content="Sushant, Full Stack Developer, Software Engineer, React, Node.js, TypeScript, Cloud, Portfolio" />
+  <meta name="author" content="Sushant" />
+  <meta name="theme-color" content="#08090E" />
+
+  <!-- OpenGraph / Social Previews -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sushant | Full-Stack Software Engineer" />
+  <meta property="og:description" content="Explore cutting-edge projects, architecture highlights, and technical expertise." />
+  <meta property="og:image" content="assets/images/project1.jpg" />
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+</head>
+<body>
+
+  <!-- Ambient Interactive Canvas & Cursor Glow -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+  <div class="mouse-spotlight" aria-hidden="true"></div>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!-- =========================================================================
+       NAVBAR
+       ========================================================================= -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Sushant Portfolio Home">
+        <span class="brand-symbol">S</span>
+        <span>Sushant<span class="gradient-text">.dev</span></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Accent Switcher -->
+        <div class="theme-picker" title="Switch Accent Vibe" aria-label="Choose color accent theme">
+          <button type="button" class="theme-dot active" data-color="violet" aria-label="Violet Theme"></button>
+          <button type="button" class="theme-dot" data-color="cyan" aria-label="Cyan Theme"></button>
+          <button type="button" class="theme-dot" data-color="amber" aria-label="Amber Theme"></button>
+          <button type="button" class="theme-dot" data-color="emerald" aria-label="Emerald Theme"></button>
+        </div>
+
+        <a href="#contact" class="btn btn-primary btn-sm">Let's Talk</a>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN CONTENT
+       ========================================================================= -->
+  <main id="main-content">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal-fade is-revealed">
+          <div class="hero-badge-wrap">
+            <span class="status-badge">
+              <span class="status-dot"></span>
+              Available for New Opportunities
+            </span>
+          </div>
+
+          <h1 class="hero-title">
+            Crafting Scalable Code & <br />
+            <span class="gradient-text">Exceptional Digital Products</span>
+          </h1>
+
+          <div class="hero-typewriter-wrap">
+            <span class="typewriter-prefix">I am a&nbsp;</span>
+            <span id="typewriter-text" class="gradient-text"></span>
+            <span class="typewriter-cursor"></span>
+          </div>
+
+          <p class="hero-description">
+            Hi, I'm Sushant. I specialize in engineering high-throughput backend services, resilient cloud architectures, and fluid, intuitive user interfaces that scale gracefully to millions of users.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <span>Explore Projects</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Get in Touch</span>
+            </a>
+            <button type="button" class="btn btn-ghost" id="quick-cv-btn" onclick="showToast('Resume Download', 'Resume download package initiated.', 'success')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download CV</span>
+            </button>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h3 class="gradient-text">5+</h3>
+              <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+              <h3 class="gradient-text">28+</h3>
+              <p>Shipped Projects</p>
+            </div>
+            <div class="stat-item">
+              <h3 class="gradient-text">99.9%</h3>
+              <p>Uptime & Reliability</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual / Avatar Showcase -->
+        <div class="hero-visual reveal-fade is-revealed">
+          <div class="avatar-halo"></div>
+          <div class="avatar-orbit-ring"></div>
+          
+          <div class="avatar-frame">
+            <img src="assets/images/avatar.jpg" alt="Sushant - Software Engineer" class="avatar-img" />
+          </div>
+
+          <!-- Floating Badges -->
+          <div class="floating-chip floating-chip-1">
+            <div class="chip-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <div class="chip-text">
+              <h4>Clean Architecture</h4>
+              <span>Robust & Scalable</span>
+            </div>
+          </div>
+
+          <div class="floating-chip floating-chip-2">
+            <div class="chip-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div class="chip-text">
+              <h4>Lightning Fast</h4>
+              <span>Optimized Performance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <span class="section-tag">About Me</span>
+          <h2>Driven by Passion, <span class="gradient-text">Grounded in Engineering</span></h2>
+          <p class="section-subtitle">A synthesis of technical precision, clean code principles, and modern aesthetic finesse.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Story Card -->
+          <div class="glass-card about-story-card reveal-fade">
+            <div>
+              <h3>Building with purpose and relentless curiosity</h3>
+              <p>
+                I am a dedicated software engineer with an obsession for high-performance software and elegant architecture. Whether designing distributed event-driven microservices, fine-tuning database query plans, or sculpting interactive WebGL and glassmorphic user interfaces, I focus on creating systems that are both mathematically dependable and visually delightful.
+              </p>
+              <p>
+                My approach bridges deep technical rigor with human-centered product intuition. I believe great code is not just functional—it should be maintainable, self-documenting, and built to evolve seamlessly as systems scale.
+              </p>
+            </div>
+            <div class="tech-tags-cloud" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.5rem;">
+              <span class="tech-chip">Full-Stack Architecture</span>
+              <span class="tech-chip">Cloud Native</span>
+              <span class="tech-chip">Distributed Systems</span>
+              <span class="tech-chip">DevSecOps</span>
+              <span class="tech-chip">Modern UI/UX</span>
+            </div>
+          </div>
+
+          <!-- 4 Pillars Grid -->
+          <div class="about-pillars-grid">
+            <div class="glass-card pillar-card reveal-fade">
+              <div class="pillar-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <h4>Scalable Backends</h4>
+              <p>Designing high-concurrency REST & GraphQL APIs with sub-second latency, Redis caching, and resilient database schemas.</p>
+            </div>
+
+            <div class="glass-card pillar-card reveal-fade">
+              <div class="pillar-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                  <path d="M2 2l7.586 7.586"></path>
+                  <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+              </div>
+              <h4>Fluid Frontend</h4>
+              <p>Crafting accessible, reactive web applications with smooth 60fps micro-animations, glassmorphic aesthetics, and top Core Web Vitals.</p>
+            </div>
+
+            <div class="glass-card pillar-card reveal-fade">
+              <div class="pillar-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                </svg>
+              </div>
+              <h4>Cloud & DevOps</h4>
+              <p>Containerized workloads via Docker, automated CI/CD deployment pipelines, and cloud orchestration with zero-downtime rollouts.</p>
+            </div>
+
+            <div class="glass-card pillar-card reveal-fade">
+              <div class="pillar-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h4>Clean Code & Security</h4>
+              <p>Adherence to SOLID design principles, comprehensive automated test suites (TDD), and zero-trust data protection standards.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS MATRIX SECTION -->
+    <section class="skills-section" id="skills">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <span class="section-tag">Expertise</span>
+          <h2>Technical <span class="gradient-text">Skills & Arsenal</span></h2>
+          <p class="section-subtitle">Proficiency across modern front-end frameworks, distributed back-end runtimes, and cloud tooling.</p>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="skills-tabs reveal-fade">
+          <button type="button" class="tab-btn active" data-tab="frontend">Frontend & Web</button>
+          <button type="button" class="tab-btn" data-tab="backend">Backend & APIs</button>
+          <button type="button" class="tab-btn" data-tab="cloud">Cloud & DevOps</button>
+          <button type="button" class="tab-btn" data-tab="architecture">System Architecture</button>
+        </div>
+
+        <!-- Skills Panels Container -->
+        <div class="skills-container">
+
+          <!-- FRONTEND PANEL -->
+          <div class="skills-panel active" id="skills-frontend">
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">⚛️</div>
+                  <h4>React & Next.js</h4>
+                </div>
+                <span class="skill-level-text">95%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="95%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">📘</div>
+                  <h4>TypeScript / JavaScript</h4>
+                </div>
+                <span class="skill-level-text">92%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="92%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">🎨</div>
+                  <h4>Modern CSS / Glassmorphism</h4>
+                </div>
+                <span class="skill-level-text">96%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="96%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">🌐</div>
+                  <h4>HTML5 & WebGL/Canvas</h4>
+                </div>
+                <span class="skill-level-text">86%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="86%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">🟢</div>
+                  <h4>Vue.js & Pinia</h4>
+                </div>
+                <span class="skill-level-text">88%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="88%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">⚡</div>
+                  <h4>Web Performance (Lighthouse)</h4>
+                </div>
+                <span class="skill-level-text">94%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="94%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BACKEND PANEL -->
+          <div class="skills-panel" id="skills-backend">
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">🟩</div>
+                  <h4>Node.js & Express</h4>
+                </div>
+                <span class="skill-level-text">94%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="94%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">🐍</div>
+                  <h4>Python & FastAPI</h4>
+                </div>
+                <span class="skill-level-text">90%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="90%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">🐘</div>
+                  <h4>PostgreSQL & Prisma</h4>
+                </div>
+                <span class="skill-level-text">91%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="91%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">🔴</div>
+                  <h4>Redis & Pub/Sub</h4>
+                </div>
+                <span class="skill-level-text">88%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="88%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">📡</div>
+                  <h4>GraphQL & RESTful APIs</h4>
+                </div>
+                <span class="skill-level-text">93%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="93%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">🍃</div>
+                  <h4>MongoDB & NoSQL</h4>
+                </div>
+                <span class="skill-level-text">85%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="85%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CLOUD & DEVOPS PANEL -->
+          <div class="skills-panel" id="skills-cloud">
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">🐳</div>
+                  <h4>Docker & Containers</h4>
+                </div>
+                <span class="skill-level-text">92%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="92%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">☁️</div>
+                  <h4>AWS (S3, ECS, Lambda, RDS)</h4>
+                </div>
+                <span class="skill-level-text">87%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="87%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">🔄</div>
+                  <h4>CI/CD (GitHub Actions)</h4>
+                </div>
+                <span class="skill-level-text">89%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="89%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">🐙</div>
+                  <h4>Git & Version Control</h4>
+                </div>
+                <span class="skill-level-text">96%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="96%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">🐧</div>
+                  <h4>Linux & Bash Scripting</h4>
+                </div>
+                <span class="skill-level-text">90%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="90%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">☸️</div>
+                  <h4>Kubernetes Basics</h4>
+                </div>
+                <span class="skill-level-text">82%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="82%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SYSTEM ARCHITECTURE PANEL -->
+          <div class="skills-panel" id="skills-architecture">
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">🏛️</div>
+                  <h4>Microservices & Event-Driven</h4>
+                </div>
+                <span class="skill-level-text">90%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="90%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">📐</div>
+                  <h4>System Design & Scalability</h4>
+                </div>
+                <span class="skill-level-text">93%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="93%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">🧪</div>
+                  <h4>Automated Testing (TDD/Jest)</h4>
+                </div>
+                <span class="skill-level-text">89%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="89%"></div>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <div class="skill-icon-wrap">🔒</div>
+                  <h4>OAuth2, JWT & Web Security</h4>
+                </div>
+                <span class="skill-level-text">92%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-level="92%"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section class="projects-section" id="projects">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <span class="section-tag">Featured Works</span>
+          <h2>Flagship <span class="gradient-text">Engineering Projects</span></h2>
+          <p class="section-subtitle">Real-world production platforms built with an emphasis on high performance, modern UX, and clean architecture.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="project-filters reveal-fade">
+          <button type="button" class="filter-btn active" data-filter="all">All Projects</button>
+          <button type="button" class="filter-btn" data-filter="ai">AI & Cloud</button>
+          <button type="button" class="filter-btn" data-filter="fullstack">Full-Stack</button>
+          <button type="button" class="filter-btn" data-filter="apps">Web Apps & IDEs</button>
+        </div>
+
+        <!-- Dynamic Projects Grid (populated by js/projects.js) -->
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & TIMELINE SECTION -->
+    <section class="timeline-section" id="experience">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <span class="section-tag">Milestones</span>
+          <h2>Career Journey & <span class="gradient-text">Experience</span></h2>
+          <p class="section-subtitle">A track record of engineering leadership, scalable product execution, and academic grounding.</p>
+        </div>
+
+        <div class="timeline-container">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item reveal-fade">
+            <div class="timeline-dot"></div>
+            <div class="glass-card timeline-content">
+              <span class="timeline-date">2023 — Present</span>
+              <h3>Lead Full-Stack Software Engineer</h3>
+              <div class="timeline-org">CloudScale Technologies</div>
+              <p>Architected high-throughput microservices infrastructure serving 1.2M+ active monthly requests. Streamlined distributed event pipelines and spearheaded modernization of frontend UI systems using modern reactive design.</p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item reveal-fade">
+            <div class="timeline-dot"></div>
+            <div class="glass-card timeline-content">
+              <span class="timeline-date">2021 — 2023</span>
+              <h3>Senior Full-Stack Engineer</h3>
+              <div class="timeline-org">Nexus Digital Labs</div>
+              <p>Designed and scaled core fintech payment engines and WebSocket-based real-time telemetry dashboards. Reduced API response latency by 42% via Redis query caching layers and database indexing.</p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item reveal-fade">
+            <div class="timeline-dot"></div>
+            <div class="glass-card timeline-content">
+              <span class="timeline-date">2019 — 2021</span>
+              <h3>Software Engineer (Frontend & UI/UX)</h3>
+              <div class="timeline-org">Apex Interactive Solutions</div>
+              <p>Developed reusable component design systems, integrated complex REST APIs, and improved Core Web Vitals to achieve 98+ scores across flagship customer-facing web apps.</p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 4 -->
+          <div class="timeline-item reveal-fade">
+            <div class="timeline-dot"></div>
+            <div class="glass-card timeline-content">
+              <span class="timeline-date">2015 — 2019</span>
+              <h3>B.Tech in Computer Science & Engineering</h3>
+              <div class="timeline-org">University Institute of Technology</div>
+              <p>Graduated with First Class Distinction. Focused on Data Structures, Algorithms, Distributed Computing, Database Management Systems, and Object-Oriented Software Design.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <span class="section-tag">Let's Connect</span>
+          <h2>Have an Idea? <span class="gradient-text">Let's Build It Together</span></h2>
+          <p class="section-subtitle">Whether you have an ambitious project in mind, need technical consulting, or just want to connect, my inbox is always open.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Direct Info -->
+          <div class="glass-card contact-info-card reveal-fade">
+            <div>
+              <h3>Get In Touch</h3>
+              <p style="color: var(--text-muted); margin-top: 0.5rem;">
+                Feel free to reach out directly via email or social platforms. I typically respond within 24 hours.
+              </p>
+            </div>
+
+            <div class="contact-details">
+              <div class="contact-detail-item">
+                <div class="contact-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <h4>Email</h4>
+                  <p>
+                    <button type="button" class="copy-chip" id="copy-email-btn" data-email="sushant.dev.pro@gmail.com" title="Click to copy email">
+                      <span>sushant.dev.pro@gmail.com</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                    </button>
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-detail-item">
+                <div class="contact-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <h4>Location</h4>
+                  <p>Global / Remote Worldwide</p>
+                </div>
+              </div>
+
+              <div class="contact-detail-item">
+                <div class="contact-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <h4>Availability</h4>
+                  <p>Open for Roles & Freelance</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div>
+              <h4 style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">Connect on Social</h4>
+              <div class="contact-socials">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="Twitter">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="glass-card contact-form-card reveal-fade">
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="contact-name">Your Name *</label>
+                  <input type="text" id="contact-name" class="form-control" placeholder="John Doe" required />
+                  <span class="error-message"></span>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Your Email *</label>
+                  <input type="email" id="contact-email" class="form-control" placeholder="john@example.com" required />
+                  <span class="error-message"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject">Subject *</label>
+                <input type="text" id="contact-subject" class="form-control" placeholder="Project Inquiry / Job Opportunity" required />
+                <span class="error-message"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Your Message *</label>
+                <textarea id="contact-message" class="form-control" placeholder="Tell me about your project, timeline, or requirements..." required></textarea>
+                <span class="error-message"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="contact-submit-btn" style="width: 100%;">
+                <span>Send Message</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       PROJECT DETAILS MODAL
+       ========================================================================= -->
+  <div class="modal-overlay" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close project modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <img id="modal-img" src="" alt="Project Preview" class="modal-header-img" />
+
+      <div class="modal-body">
+        <span class="section-tag" id="modal-category">Category</span>
+        <h2 id="modal-title" style="margin: 0.5rem 0 1rem 0;">Project Title</h2>
+        <p id="modal-description" style="color: var(--text-secondary);"></p>
+
+        <h4 style="margin-top: 1.5rem; font-size: 1rem; color: var(--text-primary);">Tech Stack & Architecture</h4>
+        <div class="modal-tags" id="modal-tags"></div>
+
+        <h4 style="font-size: 1rem; color: var(--text-primary);">Key Architectural Highlights</h4>
+        <div class="modal-highlights" id="modal-highlights"></div>
+
+        <div class="modal-footer">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="modal-live-link">
+            <span>Launch Live Demo</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="modal-github-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+            <span>Inspect Repository</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST ALERTS CONTAINER -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-copy">
+        &copy; 2026 <span>Sushant</span>. Handcrafted with modern vanilla web standards. All rights reserved.
+      </div>
+      <button class="back-to-top" id="back-to-top" aria-label="Back to Top" title="Back to Top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+      </button>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/background.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
